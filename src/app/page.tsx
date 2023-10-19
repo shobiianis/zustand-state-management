@@ -1,21 +1,17 @@
 'use client'
 import React from 'react'
-import { useBookStore } from './Store'
+import {  useUserstore } from './Store'
 
 
 const page = () => {
-   const amount=useBookStore((state)=>state.amount)
-   const setAmount=useBookStore((state)=>state.setAmount)
-   const quantity=useBookStore((state)=>state.quantity)
-   const setquantity=useBookStore((state)=>state.setQuantity)
    
-   console.log({amount,quantity})
+   const users=useUserstore((state)=>state.users)
+   const setUsers=useUserstore((state)=>state.setUsers)
+   
+   console.log({users})
   return (
     <div>
-       
-       <button onClick={()=>setAmount(23)} >amount</button>
-       <button onClick={()=>setquantity(10)} >quantity</button>
-   
+       <button onClick={()=>setUsers()}> fetch</button>
     </div>
   )
 }
